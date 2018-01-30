@@ -8,5 +8,5 @@ exec { 'apt_update':
 Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin', '/usr/local/sbin' ] }
 
 class { 'nginx::install': }
-class { 'php5::install': }
+class { 'php7::install': }
 class { 'grav::install': }

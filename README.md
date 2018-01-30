@@ -7,9 +7,9 @@ provide a lightweight Vagrant box for developing with
 
 ## What do I get?
 
-- Ubuntu Trusty 14.04
+- Ubuntu Trusty 16.04
 - Grav 1.1.3, including admin plugin
-- PHP 5, including performance optimizations for Grav
+- PHP 7
 
 ## Prerequisites
 
@@ -30,14 +30,13 @@ There's a blueprint in there so you don't have to remember the syntax.
 
 ## Optimizing performance
 
-We've made sure to follow the [performance recommendations for
-Grav](https://learn.getgrav.org/basics/requirements#optional-modules), but
-however many PHP modules we install, disk access will always be slow by default
-with Vagrant. This is particularly noticeable when running Grav because of the
-nature of flat file CMS's (all the content is stored in files). The most common
-way to remedy this is to adjust the synced folders to be [NFS
+Slow disk access can be an issue with Vagrant in general, and this is
+particularly noticeable when running Grav because of the nature of flat file
+CMS's (all the content is stored in files). The most common way to remedy this
+is to adjust the synced folders to be [NFS
 shares](https://www.vagrantup.com/docs/synced-folders/nfs.html) instead of
-[VirtualBox shared folders](https://www.vagrantup.com/docs/synced-folders/virtualbox.html).
+[VirtualBox shared
+folders](https://www.vagrantup.com/docs/synced-folders/virtualbox.html).
 
 NFS shares are faster, but they can sometimes be a bit tricky to configure, and
 we can't specify file permissions manually in our `Vagrantfile`. But fear not,
