@@ -18,7 +18,7 @@ class grav::install {
     user    => 'root',
     command => '/usr/bin/unzip /vagrant/grav-admin-v1.1.3.zip',
     require => Exec['download-grav'],
-    creates => '/vagrant/grav-admin',
+    creates => '/vagrant/grav-admin/index.php',
   }
 
 }
